@@ -1,5 +1,6 @@
-abstract class Cell(opened: Boolean)
+package logic
 
-case class Blank(override val opened: Boolean) extends Cell(opened)
-case class Bomb(override val opened: Boolean) extends Cell(opened)
-case class Hint(override val opened: Boolean, val num: Int) extends Cell(opened)
+abstract class Cell(opened: Boolean)
+case class Blank(opened: Boolean) extends Cell(opened)
+case class Bomb(opened: Boolean) extends Cell(opened)
+case class Hint(opened: Boolean, val num: Int) extends Cell(opened)

@@ -1,6 +1,6 @@
-import logic._
+package logic
 
-class Hints {
+class Hints(row: Int, col: Int) {
     def initializeHints(board: List[List[Cell]], x: Int, y: Int): List[List[Cell]] = {
         List.tabulate(x, y)((i, j) => changeToHint(board, i, j))
     }
@@ -20,10 +20,10 @@ class Hints {
                 case _ => 0
             }
         }
-        var adjacentCells = Nil
+        var adjacentCells: List[Cell] = Nil
         val adj = List(-1, 0, 1)
         for (i <- adj; j <- adj) {
-            adjacentCells = getCell(board, x + i, y + j) :: adjacentCells
+            adjacentCells = getCell(board, x + i, y + j) ++ adjacentCells
         }
         val hintNum = (adjacentCells.map(countBombs)).foldLeft(0)(_ + _)
         hintNum match {
@@ -32,9 +32,9 @@ class Hints {
         }
     }
 
-    def getCell(board: List[List[Cell]], x: Int, y: Int): Cell = {
-        if (contains(x, y)) board(x)(y)
-        else null
+    def getCell(board: List[List[Cell]], x: Int, y: Int): List[Cell] = {
+        if (contains(x, y)) List(board(x)(y))
+        else Nil
     }
 
     def contains(x: Int, y: Int): Boolean = {

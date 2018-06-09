@@ -14,21 +14,22 @@ class Hints(row: Int, col: Int) {
     }
 
     def calculateHint(board: List[List[Cell]], x: Int, y: Int): Cell = {
-        def countBombs(cell: Cell): Int = {
-            cell match {
-                case Bomb(_) => 1
-                case _ => 0
-            }
-        }
         var adjacentCells: List[Cell] = Nil
         val adj = List(-1, 0, 1)
         for (i <- adj; j <- adj) {
             adjacentCells = getCell(board, x + i, y + j) ++ adjacentCells
         }
-        val hintNum = (adjacentCells.map(countBombs)).foldLeft(0)(_ + _)
-        hintNum match {
+        val num = (adjacentCells.map(countBombs)).foldLeft(0)(_ + _)
+        num match {
             case 0 => Blank(false)
-            case _ => Hint(false, hintNum)
+            case _ => Hint(false, num)
+        }
+    }
+
+    def countBombs(cell: Cell): Int = {
+        cell match {
+            case Bomb(_) => 1
+            case _ => 0
         }
     }
 

@@ -6,7 +6,7 @@ class Game(row: Int, col: Int, quantity: Int, var board: List[List[Cell]] = Nil)
 
     board = if (board != Nil) board else initializeBoard()
 
-    private def initializeBoard(): List[List[Cell]] = {
+    def initializeBoard(): List[List[Cell]] = {
         val board1 = List.tabulate(row)(_ => List.tabulate(col)(_ => new Blank(false)))
         val board2 = bombs.initializeBombs(board1, quantity)
         hints.initializeHints(board2, row, col)
@@ -30,7 +30,7 @@ class Game(row: Int, col: Int, quantity: Int, var board: List[List[Cell]] = Nil)
         }
     }
 
-    private def openAdjacentCells(x: Int, y: Int): Game = {
+    def openAdjacentCells(x: Int, y: Int): Game = {
         val newboard = board.updated(x, board(x).updated(y, Blank(true)))
         val newGame = new Game(row, col, quantity, newboard)
         var adjacentCells: List[(Int, Int)] = Nil

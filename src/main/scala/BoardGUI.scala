@@ -3,30 +3,12 @@ import scalafx.Includes._
 import scalafx.scene.input.MouseEvent
 import scalafx.application.JFXApp
 import scalafx.scene.Scene
-import scalafx.scene.layout.HBox
-import scalafx.scene.control.Button
 import scalafx.scene.image.{Image, ImageView}
 import scalafx.scene.paint.Color
 import scalafx.scene.shape.Rectangle
 
 
 object BoardGUI extends JFXApp {
-/*
-  val button = new Button {
-    onAction = (event: ActionEvent) =>  {
-      println("Pressed")
-      val e = event
-      println(e)
-    }
-    graphic = new ImageView {image = new Image(this, "2.png")}
-    if(MouseEvent.BUTTON3 == 1){
-      println("Right")
-    }
-  }*/
-/*
-  val myLayout = new HBox{
-    children = List(button)
-  }*/
 
   val tileWidth = 40
   val tileHeight = 40
@@ -34,8 +16,8 @@ object BoardGUI extends JFXApp {
   val tilesX = 10
   val tilesY = 15
 
-  var board = Array.ofDim[ImageView](tilesY,tilesX)
-  for(j <- 0 to tilesX - 1; i <- 0 to tilesY - 1){
+  var board = Array.ofDim[ImageView](tilesY, tilesX)
+  for (j <- 0 to tilesX - 1; i <- 0 to tilesY - 1) {
     val im = new ImageView(new Image("tile.png"))
     im.x = j * tileWidth
     im.y = i * tileHeight
@@ -47,14 +29,10 @@ object BoardGUI extends JFXApp {
   var boardFlat = board.flatten
 
 
-  val myScene = new Scene(tileWidth * tilesX, tileHeight * tilesY){
+  val myScene = new Scene(tileWidth * tilesX, tileHeight * tilesY) {
 
-
-    val rect = Rectangle(0,0,30,30)
+    val rect = Rectangle(0, 0, 30, 30)
     rect.fill = Color.Blue
-
-
-
 
     content = boardFlat
     onMouseMoved = (m: MouseEvent) => {
@@ -62,24 +40,26 @@ object BoardGUI extends JFXApp {
       rect.y = m.getY - 0.5 * rect.height()
     }
 
+
     onMouseClicked = (m: MouseEvent) => {
-      val nr_x = (m.getX/tileWidth).asInstanceOf[Int]
-      val nr_y = (m.getY/tileHeight).asInstanceOf[Int]
+      val nr_x = (m.getX / tileWidth).asInstanceOf[Int]
+      val nr_y = (m.getY / tileHeight).asInstanceOf[Int]
       println(nr_x, nr_y)
 
-      if(m.getButton == MouseButton.PRIMARY){
+      if (m.getButton == MouseButton.PRIMARY) {
         println("LPM")
         putImg(nr_x, nr_y, "tile_pressed.png")
-      } else if(m.getButton == MouseButton.SECONDARY){
+      } else if (m.getButton == MouseButton.SECONDARY) {
         println("RPM")
         putImg(nr_x, nr_y, "flag.png")
-      } else if(m.getButton == MouseButton.MIDDLE){
+      } else if (m.getButton == MouseButton.MIDDLE) {
         println("Scroll")
       }
 
     }
 
-    def putImg(x: Int, y: Int, name: String): Unit ={
+
+    def putImg(x: Int, y: Int, name: String): Unit = {
       val im = new ImageView(new Image(name))
       im.x = x * tileWidth
       im.y = y * tileHeight
@@ -90,14 +70,12 @@ object BoardGUI extends JFXApp {
       content = boardFlat
     }
 
-
   }
 
-  stage = new JFXApp.PrimaryStage{
+  stage = new JFXApp.PrimaryStage {
     scene = myScene
     title = "Board"
   }
-
 
 
 }

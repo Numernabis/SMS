@@ -65,17 +65,18 @@ object BoardGUI extends JFXApp {
     onMouseClicked = (m: MouseEvent) => {
       val nr_x = (m.getX/tileWidth).asInstanceOf[Int]
       val nr_y = (m.getY/tileHeight).asInstanceOf[Int]
+      println(nr_x, nr_y)
 
-      if(m.getButton == MouseButton.PRIMARY && m.getX >10 && m.getX < 30){
-        println("PIERWSZY")
+      if(m.getButton == MouseButton.PRIMARY){
+        println("LPM")
+        putImg(nr_x, nr_y, "tile_pressed.png")
       } else if(m.getButton == MouseButton.SECONDARY){
-        println("DRUGI")
+        println("RPM")
+        putImg(nr_x, nr_y, "flag.png")
       } else if(m.getButton == MouseButton.MIDDLE){
-        println("Srodek")
+        println("Scroll")
       }
 
-      println(nr_x, nr_y)
-      putImg(nr_x, nr_y, "tile_pressed.png")
     }
 
     def putImg(x: Int, y: Int, name: String): Unit ={
@@ -94,7 +95,7 @@ object BoardGUI extends JFXApp {
 
   stage = new JFXApp.PrimaryStage{
     scene = myScene
-    title = "TADA"
+    title = "Board"
   }
 
 

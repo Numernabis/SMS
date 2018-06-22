@@ -50,7 +50,7 @@ object BoardGUI extends JFXApp {
     onMouseClicked = (m: MouseEvent) => {
       val nr_x = (m.getX / tileWidth).asInstanceOf[Int]
       val nr_y = (m.getY / tileHeight).asInstanceOf[Int]
-      println(nr_x, nr_y)
+      //println(nr_x, nr_y)
 
       m.getButton match {
         case MouseButton.PRIMARY =>

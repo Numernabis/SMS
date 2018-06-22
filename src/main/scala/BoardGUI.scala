@@ -122,7 +122,7 @@ object BoardGUI extends JFXApp {
 
   stage = new JFXApp.PrimaryStage {
     scene = myScene
-    title = "Board"
+    title = "Mine Sweeper"
   }
 
 

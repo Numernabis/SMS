@@ -1,22 +1,17 @@
-
 import logic._
-
 import javafx.scene.input.MouseButton
 import scalafx.Includes._
 import scalafx.scene.input.MouseEvent
 import scalafx.application.JFXApp
 import scalafx.scene.Scene
 import scalafx.scene.image.{Image, ImageView}
-import scalafx.scene.paint.Color
-import scalafx.scene.shape.Rectangle
-
-
 
 object BoardGUI extends JFXApp {
 
   val imgNormal = "images/tile.png"
   val imgPressed = "images/tile_pressed.png"
   val imgBomb = "images/bomb.png"
+  val imgFlag = "images/flag.png"
   val img1 = "images/1.png"
   val img2 = "images/2.png"
   val img3 = "images/3.png"
@@ -27,14 +22,12 @@ object BoardGUI extends JFXApp {
   val img8 = "images/8.png"
 
 
-
-
   val tileWidth = 40
   val tileHeight = 40
 
   val tilesX = 10
   val tilesY = 15
-  val bombNr = 20
+  val bombNr = 30
 
   var imgBoard = Array.ofDim[ImageView](tilesY, tilesX)
   for (j <- 0 until tilesX; i <- 0 until tilesY) {
@@ -61,21 +54,27 @@ object BoardGUI extends JFXApp {
 
       m.getButton match {
         case MouseButton.PRIMARY =>
-          println("LPM")
+          //println("LPM")
           logicBoard = logicBoard.openCell(nr_x, nr_y)
           refresh()
         case MouseButton.SECONDARY =>
-          println("RPM")
-          putImg(nr_x, nr_y, "images/flag.png")
+          //println("RPM")
+          putImg(nr_x, nr_y, imgFlag)
+          flattenAndReplace()
         case MouseButton.MIDDLE =>
-          putImg(nr_x, nr_y, "images/bomb.png")
-          println("Scroll")
+          putImg(nr_x, nr_y, imgBomb)
+          //println("Scroll")
+          flattenAndReplace()
         case _ =>
           println("Unknown pattern with Mouse Button")
       }
 
     }
 
+    def flattenAndReplace(): Unit = {
+      boardFlat = imgBoard.flatten
+      content = boardFlat
+    }
 
     def putImg(x: Int, y: Int, name: String): Unit = {
       val im = new ImageView(new Image(name))
@@ -84,14 +83,16 @@ object BoardGUI extends JFXApp {
       im.fitHeight = tileHeight
       im.fitWidth = tileWidth
       imgBoard(y)(x) = im
-      var boardFlat = imgBoard.flatten
-      content = boardFlat
     }
 
         def refresh(): Unit ={
           for (j <- 0 until tilesX; i <- 0 until tilesY) {
 
             logicBoard.getCell(j, i) match {
+              case Hint(false, _) =>
+              case Bomb(false) =>
+              case Blank(false) =>
+
               case Bomb(true) =>
                 putImg(j, i, imgBomb)
               case Blank(true) =>
@@ -113,9 +114,10 @@ object BoardGUI extends JFXApp {
               case Hint(true, 8) =>
                 putImg(j, i, img8)
               case x =>
-                println("Unknown pattern " + x.toString)
+                //println("Unknown pattern " + x.toString)
             }
           }
+          flattenAndReplace()
         }
 
   }

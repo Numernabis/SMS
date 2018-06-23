@@ -12,21 +12,18 @@ object BoardGUI extends JFXApp {
     val imgPressed = "images/tile_pressed.png"
     val imgBomb = "images/bomb.png"
     val imgFlag = "images/flag.png"
-    val img1 = "images/1.png"
-    val img2 = "images/2.png"
-    val img3 = "images/3.png"
-    val img4 = "images/4.png"
-    val img5 = "images/5.png"
-    val img6 = "images/6.png"
-    val img7 = "images/7.png"
-    val img8 = "images/8.png"
+    val imgHint = new Array[String](9)
+    for (i <- 1 until 9) {
+        imgHint(i) = s"images/$i.png"
+    }
 
     val tileWidth = 40
     val tileHeight = 40
 
-    val tilesX = 10 //TODO: jako zmienne, w zależności od poziomu
-    val tilesY = 15 //TODO: jw.
-    val bombNr = 20 //TODO: jw.
+    val tilesX = 15 //TODO: jako zmienne, w zależności od poziomu
+    val tilesY = 10 //TODO: jw.
+    val bombNr = 9  //TODO: jw.
+
     var logicBoard = new Game(tilesX, tilesY, bombNr)
 
     var imgBoard = Array.ofDim[ImageView](tilesY, tilesX)
@@ -85,23 +82,19 @@ object BoardGUI extends JFXApp {
 
             for (j <- 0 until tilesX; i <- 0 until tilesY) {
                 logicBoard.getCell(j, i) match {
-                    case Hint(false, _) =>
-                    case Bomb(false) =>
-                    case Blank(false) =>
+                    case Hint(false, _)=>
+                    case Bomb(false)   =>
+                    case Blank(false)  =>
 
                     case Bomb(true)    => putImg(j, i, imgBomb)
+                        //TODO: koniec gry
                     case Blank(true)   => putImg(j, i, imgPressed)
-                    case Hint(true, 1) => putImg(j, i, img1)
-                    case Hint(true, 2) => putImg(j, i, img2)
-                    case Hint(true, 3) => putImg(j, i, img3)
-                    case Hint(true, 4) => putImg(j, i, img4)
-                    case Hint(true, 5) => putImg(j, i, img5)
-                    case Hint(true, 6) => putImg(j, i, img6)
-                    case Hint(true, 7) => putImg(j, i, img7)
-                    case Hint(true, 8) => putImg(j, i, img8)
-                    case x =>
+                    case Hint(true, x) => putImg(j, i, imgHint(x))
+                    case _ =>
                 }
             }
+
+            //TODO: sprawdzenie czy wygrano
 
             flattenAndReplace()
         }

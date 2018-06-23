@@ -1,5 +1,5 @@
 // Name of the project
-name := "ScalaFX Hello World"
+name := "SMS"
 
 // Project version
 version := "8.0.144-R12"

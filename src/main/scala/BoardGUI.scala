@@ -51,9 +51,8 @@ object BoardGUI extends JFXApp {
                     logicBoard = logicBoard.openCell(nr_x, nr_y)
                     refresh()
                 case MouseButton.SECONDARY =>
-                    //TODO: logicBoard.putFlag(nr_x, nr_y)
-                    putImg(nr_x, nr_y, imgFlag)
-                    flattenAndReplace()
+                    logicBoard = logicBoard.putFlag(nr_x, nr_y)
+                    refresh()
                 case MouseButton.MIDDLE =>
                     //czy potrzebujemy środkowego przycisku mychy?
                     //putImg(nr_x, nr_y, imgBomb)
@@ -82,14 +81,19 @@ object BoardGUI extends JFXApp {
 
             for (j <- 0 until tilesX; i <- 0 until tilesY) {
                 logicBoard.getCell(j, i) match {
-                    case Hint(false, _)=>
-                    case Bomb(false)   =>
-                    case Blank(false)  =>
-
-                    case Bomb(true)    => putImg(j, i, imgBomb)
+                    case Bomb(1)    => {
+                        putImg(j, i, imgBomb)
                         //TODO: koniec gry
-                    case Blank(true)   => putImg(j, i, imgPressed)
-                    case Hint(true, x) => putImg(j, i, imgHint(x))
+                    }
+                    case Blank(1)   => putImg(j, i, imgPressed)
+                    case Hint(1, x) => putImg(j, i, imgHint(x))
+
+                    case Blank(2) | Bomb(2) | Hint(2, _) => {
+                        putImg(j, i, imgFlag)
+                    }
+                    case Blank(0) | Bomb(0) | Hint(0, _) => {
+                        putImg(j, i, imgNormal)
+                    }
                     case _ =>
                 }
             }

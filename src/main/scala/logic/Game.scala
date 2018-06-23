@@ -21,6 +21,11 @@ class Game(row: Int, col: Int, quantity: Int, var board: List[List[Cell]] = Nil)
             case Blank(0)     => newboard = board.updated(x, board(x).updated(y, Blank(2)))
             case Bomb(0)      => newboard = board.updated(x, board(x).updated(y, Bomb(2)))
             case Hint(0, num) => newboard = board.updated(x, board(x).updated(y, Hint(2, num)))
+
+            case Blank(2)     => newboard = board.updated(x, board(x).updated(y, Blank(0)))
+            case Bomb(2)      => newboard = board.updated(x, board(x).updated(y, Bomb(0)))
+            case Hint(2, num) => newboard = board.updated(x, board(x).updated(y, Hint(0, num)))
+            case _ =>
         }
         new Game(row, col, quantity, newboard)
     }
@@ -30,8 +35,6 @@ class Game(row: Int, col: Int, quantity: Int, var board: List[List[Cell]] = Nil)
         val y = tuple._2
         val cell = board(x)(y)
         cell match {
-            case Blank(2) | Bomb(2) | Hint(2, _) => //there is a flag
-
             case Blank(0) => openAdjacentCells(x, y)
             case Bomb(0) => {
                 val newboard = board.updated(x, board(x).updated(y, Bomb(1)))
@@ -41,7 +44,8 @@ class Game(row: Int, col: Int, quantity: Int, var board: List[List[Cell]] = Nil)
                 val newboard = board.updated(x, board(x).updated(y, Hint(1, num)))
                 new Game(row, col, quantity, newboard)
             }
-            case _ => new Game(row, col, quantity, board)
+
+            case _ => new Game(row, col, quantity, board) //flag or already opened
         }
     }
 

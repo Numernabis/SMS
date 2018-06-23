@@ -21,13 +21,13 @@ object BoardGUI extends JFXApp {
     val img7 = "images/7.png"
     val img8 = "images/8.png"
 
-
     val tileWidth = 40
     val tileHeight = 40
 
-    val tilesX = 10
-    val tilesY = 15
-    val bombNr = 20
+    val tilesX = 10 //TODO: jako zmienne, w zależności od poziomu
+    val tilesY = 15 //TODO: jw.
+    val bombNr = 20 //TODO: jw.
+    var logicBoard = new Game(tilesX, tilesY, bombNr)
 
     var imgBoard = Array.ofDim[ImageView](tilesY, tilesX)
     for (j <- 0 until tilesX; i <- 0 until tilesY) {
@@ -38,10 +38,7 @@ object BoardGUI extends JFXApp {
         im.fitWidth = tileWidth
         imgBoard(i)(j) = im
     }
-    var logicBoard = new Game(tilesX, tilesY, bombNr)
-
     var boardFlat = imgBoard.flatten
-
 
     val myScene: Scene = new Scene(tileWidth * tilesX, tileHeight * tilesY) {
 
@@ -54,17 +51,16 @@ object BoardGUI extends JFXApp {
 
             m.getButton match {
                 case MouseButton.PRIMARY =>
-                    //println("LPM")
                     logicBoard = logicBoard.openCell(nr_x, nr_y)
                     refresh()
                 case MouseButton.SECONDARY =>
-                    //println("RPM")
+                    //TODO: logicBoard.putFlag(nr_x, nr_y)
                     putImg(nr_x, nr_y, imgFlag)
                     flattenAndReplace()
                 case MouseButton.MIDDLE =>
-                    putImg(nr_x, nr_y, imgBomb)
-                    //println("Scroll")
-                    flattenAndReplace()
+                    //czy potrzebujemy środkowego przycisku mychy?
+                    //putImg(nr_x, nr_y, imgBomb)
+                    //flattenAndReplace()
                 case _ =>
                     println("Unknown pattern with Mouse Button")
             }
@@ -86,46 +82,33 @@ object BoardGUI extends JFXApp {
         }
 
         def refresh(): Unit = {
-            for (j <- 0 until tilesX; i <- 0 until tilesY) {
 
+            for (j <- 0 until tilesX; i <- 0 until tilesY) {
                 logicBoard.getCell(j, i) match {
                     case Hint(false, _) =>
                     case Bomb(false) =>
                     case Blank(false) =>
 
-                    case Bomb(true) =>
-                        putImg(j, i, imgBomb)
-                    case Blank(true) =>
-                        putImg(j, i, imgPressed)
-                    case Hint(true, 1) =>
-                        putImg(j, i, img1)
-                    case Hint(true, 2) =>
-                        putImg(j, i, img2)
-                    case Hint(true, 3) =>
-                        putImg(j, i, img3)
-                    case Hint(true, 4) =>
-                        putImg(j, i, img4)
-                    case Hint(true, 5) =>
-                        putImg(j, i, img5)
-                    case Hint(true, 6) =>
-                        putImg(j, i, img6)
-                    case Hint(true, 7) =>
-                        putImg(j, i, img7)
-                    case Hint(true, 8) =>
-                        putImg(j, i, img8)
+                    case Bomb(true)    => putImg(j, i, imgBomb)
+                    case Blank(true)   => putImg(j, i, imgPressed)
+                    case Hint(true, 1) => putImg(j, i, img1)
+                    case Hint(true, 2) => putImg(j, i, img2)
+                    case Hint(true, 3) => putImg(j, i, img3)
+                    case Hint(true, 4) => putImg(j, i, img4)
+                    case Hint(true, 5) => putImg(j, i, img5)
+                    case Hint(true, 6) => putImg(j, i, img6)
+                    case Hint(true, 7) => putImg(j, i, img7)
+                    case Hint(true, 8) => putImg(j, i, img8)
                     case x =>
-                    //println("Unknown pattern " + x.toString)
                 }
             }
+
             flattenAndReplace()
         }
-
     }
 
     stage = new JFXApp.PrimaryStage {
         scene = myScene
         title = "Mine Sweeper"
     }
-
-
 }

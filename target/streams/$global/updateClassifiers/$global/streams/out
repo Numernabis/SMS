@@ -5,7 +5,7 @@
 [debug] resolving dependencies for configuration 'compile'
 [debug] == resolving dependencies for scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12 [compile]
 [debug] == resolving dependencies scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12->org.scala-lang#scala-library;2.12.4 [compile->default]
-[debug] sbt-chain: Checking cache for: dependency: org.scala-lang#scala-library;2.12.4 {compile=[default, master(*), compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], runtime=[default, master(*), compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], test=[default, master(*), compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], compile-internal=[default, master(*), compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], runtime-internal=[default, master(*), compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], test-internal=[default, master(*), compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], scala-tool=[default, master(*), compile, runtime(*), master(compile), runtime, optional, optional(default), compile(*), master]}
+[debug] sbt-chain: Checking cache for: dependency: org.scala-lang#scala-library;2.12.4 {compile=[default, master(*), compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], runtime=[default, master(*), compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], test=[default, master(*), compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], compile-internal=[default, master(*), compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], runtime-internal=[default, master(*), compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], test-internal=[default, master(*), compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], scala-tool=[default, master(*), compile, runtime(*), runtime, optional, optional(default), compile(*), master]}
 [debug] sbt-chain: module revision found in cache: org.scala-lang#scala-library;2.12.4
 [debug] 	found org.scala-lang#scala-library;2.12.4 in sbt-chain
 [debug] 	[2.12.4] org.scala-lang#scala-library;2.12.4
@@ -41,7 +41,7 @@
 [debug] == resolving dependencies scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12->org.scalafx#scalafx_2.12;8.0.144-R12 [compile->master]
 [debug] == resolving dependencies scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12->org.scalafx#scalafx_2.12;8.0.144-R12 [compile->master]
 [debug] == resolving dependencies scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12->org.scala-lang#scala-reflect;2.12.4 [compile->compile]
-[debug] sbt-chain: Checking cache for: dependency: org.scala-lang#scala-reflect;2.12.4 {compile=[compile, runtime(*), master(compile), runtime, compile(*), master], runtime=[compile, runtime(*), master(compile), runtime, compile(*), master], test=[compile, runtime(*), master(compile), runtime, compile(*), master], compile-internal=[compile, runtime(*), master(compile), runtime, compile(*), master], runtime-internal=[compile, runtime(*), master(compile), runtime, compile(*), master], test-internal=[compile, runtime(*), master(compile), runtime, compile(*), master], scala-tool=[compile, runtime(*), master(compile), runtime, compile(*), master]}
+[debug] sbt-chain: Checking cache for: dependency: org.scala-lang#scala-reflect;2.12.4 {compile=[compile, runtime(*), master(compile), runtime, compile(*), master], runtime=[compile, runtime(*), master(compile), runtime, compile(*), master], test=[compile, runtime(*), master(compile), runtime, compile(*), master], compile-internal=[compile, runtime(*), master(compile), runtime, compile(*), master], runtime-internal=[compile, runtime(*), master(compile), runtime, compile(*), master], test-internal=[compile, runtime(*), master(compile), runtime, compile(*), master], scala-tool=[master(*), compile, runtime(*), runtime, compile(*), master]}
 [debug] sbt-chain: module revision found in cache: org.scala-lang#scala-reflect;2.12.4
 [debug] 	found org.scala-lang#scala-reflect;2.12.4 in sbt-chain
 [debug] 	[2.12.4] org.scala-lang#scala-reflect;2.12.4
@@ -612,37 +612,36 @@
 [debug] == resolving dependencies scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12->org.scala-lang#scala-library;2.12.4 [scala-tool->compile]
 [debug] == resolving dependencies scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12->org.scala-lang#scala-library;2.12.4 [scala-tool->runtime(*)]
 [debug] == resolving dependencies scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12->org.scala-lang#scala-library;2.12.4 [scala-tool->compile]
-[debug] == resolving dependencies scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12->org.scala-lang#scala-library;2.12.4 [scala-tool->master(compile)]
 [debug] == resolving dependencies scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12->org.scala-lang#scala-library;2.12.4 [scala-tool->runtime]
 [debug] == resolving dependencies scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12->org.scala-lang#scala-library;2.12.4 [scala-tool->compile]
 [debug] == resolving dependencies scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12->org.scala-lang#scala-library;2.12.4 [scala-tool->optional]
 [debug] == resolving dependencies scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12->org.scala-lang#scala-library;2.12.4 [scala-tool->optional(default)]
 [debug] == resolving dependencies scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12->org.scala-lang#scala-library;2.12.4 [scala-tool->compile(*)]
 [debug] == resolving dependencies scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12->org.scala-lang#scala-library;2.12.4 [scala-tool->master]
-[debug] == resolving dependencies scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12->org.scala-lang.modules#scala-xml_2.12;1.0.6 [scala-tool->compile]
-[debug] sbt-chain: Checking cache for: dependency: org.scala-lang.modules#scala-xml_2.12;1.0.6 {scala-tool=[compile, runtime(*), master(compile), runtime, compile(*), master]}
+[debug] == resolving dependencies scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12->org.scala-lang.modules#scala-xml_2.12;1.0.6 [scala-tool->master(*)]
+[debug] sbt-chain: Checking cache for: dependency: org.scala-lang.modules#scala-xml_2.12;1.0.6 {scala-tool=[master(*), compile, runtime(*), runtime, compile(*), master]}
 [debug] sbt-chain: module revision found in cache: org.scala-lang.modules#scala-xml_2.12;1.0.6
 [debug] 	found org.scala-lang.modules#scala-xml_2.12;1.0.6 in sbt-chain
+[debug] == resolving dependencies scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12->org.scala-lang.modules#scala-xml_2.12;1.0.6 [scala-tool->compile]
 [debug] == resolving dependencies scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12->org.scala-lang.modules#scala-xml_2.12;1.0.6 [scala-tool->runtime(*)]
 [debug] == resolving dependencies scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12->org.scala-lang.modules#scala-xml_2.12;1.0.6 [scala-tool->compile]
-[debug] == resolving dependencies scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12->org.scala-lang.modules#scala-xml_2.12;1.0.6 [scala-tool->master(compile)]
 [debug] == resolving dependencies scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12->org.scala-lang.modules#scala-xml_2.12;1.0.6 [scala-tool->runtime]
 [debug] == resolving dependencies scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12->org.scala-lang.modules#scala-xml_2.12;1.0.6 [scala-tool->compile]
 [debug] == resolving dependencies scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12->org.scala-lang.modules#scala-xml_2.12;1.0.6 [scala-tool->compile(*)]
 [debug] == resolving dependencies scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12->org.scala-lang.modules#scala-xml_2.12;1.0.6 [scala-tool->master]
+[debug] == resolving dependencies scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12->org.scala-lang#scala-reflect;2.12.4 [scala-tool->master(*)]
 [debug] == resolving dependencies scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12->org.scala-lang#scala-reflect;2.12.4 [scala-tool->compile]
 [debug] == resolving dependencies scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12->org.scala-lang#scala-reflect;2.12.4 [scala-tool->runtime(*)]
 [debug] == resolving dependencies scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12->org.scala-lang#scala-reflect;2.12.4 [scala-tool->compile]
-[debug] == resolving dependencies scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12->org.scala-lang#scala-reflect;2.12.4 [scala-tool->master(compile)]
 [debug] == resolving dependencies scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12->org.scala-lang#scala-reflect;2.12.4 [scala-tool->runtime]
 [debug] == resolving dependencies scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12->org.scala-lang#scala-reflect;2.12.4 [scala-tool->compile]
 [debug] == resolving dependencies scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12->org.scala-lang#scala-reflect;2.12.4 [scala-tool->compile(*)]
 [debug] == resolving dependencies scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12->org.scala-lang#scala-reflect;2.12.4 [scala-tool->master]
-[debug] == resolving dependencies scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12->jline#jline;2.14.5 [scala-tool->compile]
-[debug] sbt-chain: Checking cache for: dependency: jline#jline;2.14.5 {scala-tool=[compile, master(compile), compile(*), master]}
+[debug] == resolving dependencies scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12->jline#jline;2.14.5 [scala-tool->master(*)]
+[debug] sbt-chain: Checking cache for: dependency: jline#jline;2.14.5 {scala-tool=[master(*), compile, compile(*), master]}
 [debug] sbt-chain: module revision found in cache: jline#jline;2.14.5
 [debug] 	found jline#jline;2.14.5 in sbt-chain
-[debug] == resolving dependencies scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12->jline#jline;2.14.5 [scala-tool->master(compile)]
+[debug] == resolving dependencies scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12->jline#jline;2.14.5 [scala-tool->compile]
 [debug] == resolving dependencies scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12->jline#jline;2.14.5 [scala-tool->compile(*)]
 [debug] == resolving dependencies scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12->jline#jline;2.14.5 [scala-tool->master]
 [debug] == resolving dependencies scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12->org.scala-lang#scala-compiler;2.12.4 [scala-tool->default]
@@ -660,22 +659,22 @@
 [debug] == resolving dependencies scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12->org.scala-lang#scala-compiler;2.12.4 [scala-tool->master]
 [debug] 	resolved ivy file produced in cache
 [debug] :: downloading artifacts ::
-[debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.6!scala-xml_2.12.jar(src)
-[debug] 	[NOT REQUIRED] org.scalafx#scalafx_2.12;8.0.144-R12!scalafx_2.12.jar(src)
+[debug] 	[NOT REQUIRED] jline#jline;2.14.5!jline.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-compiler;2.12.4!scala-compiler.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.12.4!scala-library.jar(src)
+[debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.6!scala-xml_2.12.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-reflect;2.12.4!scala-reflect.jar(src)
-[debug] 	[NOT REQUIRED] jline#jline;2.14.5!jline.jar(src)
-[debug] :: resolution report :: resolve 263ms :: artifacts dl 12ms
-[debug] 	report for scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12 compile produced in C:\Users\Ludwik Ciechański\Desktop\SMS\target\scala-2.12\resolution-cache\reports\scalafx-hello-world-scalafx-hello-world$sources-compile.xml
-[debug] 	report for scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12 runtime produced in C:\Users\Ludwik Ciechański\Desktop\SMS\target\scala-2.12\resolution-cache\reports\scalafx-hello-world-scalafx-hello-world$sources-runtime.xml
-[debug] 	report for scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12 test produced in C:\Users\Ludwik Ciechański\Desktop\SMS\target\scala-2.12\resolution-cache\reports\scalafx-hello-world-scalafx-hello-world$sources-test.xml
-[debug] 	report for scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12 provided produced in C:\Users\Ludwik Ciechański\Desktop\SMS\target\scala-2.12\resolution-cache\reports\scalafx-hello-world-scalafx-hello-world$sources-provided.xml
-[debug] 	report for scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12 optional produced in C:\Users\Ludwik Ciechański\Desktop\SMS\target\scala-2.12\resolution-cache\reports\scalafx-hello-world-scalafx-hello-world$sources-optional.xml
-[debug] 	report for scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12 compile-internal produced in C:\Users\Ludwik Ciechański\Desktop\SMS\target\scala-2.12\resolution-cache\reports\scalafx-hello-world-scalafx-hello-world$sources-compile-internal.xml
-[debug] 	report for scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12 runtime-internal produced in C:\Users\Ludwik Ciechański\Desktop\SMS\target\scala-2.12\resolution-cache\reports\scalafx-hello-world-scalafx-hello-world$sources-runtime-internal.xml
-[debug] 	report for scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12 test-internal produced in C:\Users\Ludwik Ciechański\Desktop\SMS\target\scala-2.12\resolution-cache\reports\scalafx-hello-world-scalafx-hello-world$sources-test-internal.xml
-[debug] 	report for scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12 plugin produced in C:\Users\Ludwik Ciechański\Desktop\SMS\target\scala-2.12\resolution-cache\reports\scalafx-hello-world-scalafx-hello-world$sources-plugin.xml
-[debug] 	report for scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12 pom produced in C:\Users\Ludwik Ciechański\Desktop\SMS\target\scala-2.12\resolution-cache\reports\scalafx-hello-world-scalafx-hello-world$sources-pom.xml
-[debug] 	report for scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12 scala-tool produced in C:\Users\Ludwik Ciechański\Desktop\SMS\target\scala-2.12\resolution-cache\reports\scalafx-hello-world-scalafx-hello-world$sources-scala-tool.xml
-[debug] 	resolve done (263ms resolve - 12ms download)
+[debug] 	[NOT REQUIRED] org.scalafx#scalafx_2.12;8.0.144-R12!scalafx_2.12.jar(src)
+[debug] :: resolution report :: resolve 312ms :: artifacts dl 35ms
+[debug] 	report for scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12 compile produced in C:\Users\Wojtek\Documents\Studia\IV semestr\Scala\SMS\target\scala-2.12\resolution-cache\reports\scalafx-hello-world-scalafx-hello-world$sources-compile.xml
+[debug] 	report for scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12 runtime produced in C:\Users\Wojtek\Documents\Studia\IV semestr\Scala\SMS\target\scala-2.12\resolution-cache\reports\scalafx-hello-world-scalafx-hello-world$sources-runtime.xml
+[debug] 	report for scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12 test produced in C:\Users\Wojtek\Documents\Studia\IV semestr\Scala\SMS\target\scala-2.12\resolution-cache\reports\scalafx-hello-world-scalafx-hello-world$sources-test.xml
+[debug] 	report for scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12 provided produced in C:\Users\Wojtek\Documents\Studia\IV semestr\Scala\SMS\target\scala-2.12\resolution-cache\reports\scalafx-hello-world-scalafx-hello-world$sources-provided.xml
+[debug] 	report for scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12 optional produced in C:\Users\Wojtek\Documents\Studia\IV semestr\Scala\SMS\target\scala-2.12\resolution-cache\reports\scalafx-hello-world-scalafx-hello-world$sources-optional.xml
+[debug] 	report for scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12 compile-internal produced in C:\Users\Wojtek\Documents\Studia\IV semestr\Scala\SMS\target\scala-2.12\resolution-cache\reports\scalafx-hello-world-scalafx-hello-world$sources-compile-internal.xml
+[debug] 	report for scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12 runtime-internal produced in C:\Users\Wojtek\Documents\Studia\IV semestr\Scala\SMS\target\scala-2.12\resolution-cache\reports\scalafx-hello-world-scalafx-hello-world$sources-runtime-internal.xml
+[debug] 	report for scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12 test-internal produced in C:\Users\Wojtek\Documents\Studia\IV semestr\Scala\SMS\target\scala-2.12\resolution-cache\reports\scalafx-hello-world-scalafx-hello-world$sources-test-internal.xml
+[debug] 	report for scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12 plugin produced in C:\Users\Wojtek\Documents\Studia\IV semestr\Scala\SMS\target\scala-2.12\resolution-cache\reports\scalafx-hello-world-scalafx-hello-world$sources-plugin.xml
+[debug] 	report for scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12 pom produced in C:\Users\Wojtek\Documents\Studia\IV semestr\Scala\SMS\target\scala-2.12\resolution-cache\reports\scalafx-hello-world-scalafx-hello-world$sources-pom.xml
+[debug] 	report for scalafx-hello-world#scalafx-hello-world$sources;8.0.144-R12 scala-tool produced in C:\Users\Wojtek\Documents\Studia\IV semestr\Scala\SMS\target\scala-2.12\resolution-cache\reports\scalafx-hello-world-scalafx-hello-world$sources-scala-tool.xml
+[debug] 	resolve done (312ms resolve - 35ms download)

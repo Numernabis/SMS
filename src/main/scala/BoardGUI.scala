@@ -27,11 +27,11 @@ object BoardGUI extends JFXApp {
 
   val tilesX = 10
   val tilesY = 15
-  val bombNr = 30
+  val bombNr = 20
 
   var imgBoard = Array.ofDim[ImageView](tilesY, tilesX)
   for (j <- 0 until tilesX; i <- 0 until tilesY) {
-    val im = new ImageView(new Image("images/tile.png"))
+    val im = new ImageView(new Image(imgNormal))
     im.x = j * tileWidth
     im.y = i * tileHeight
     im.fitHeight = tileHeight

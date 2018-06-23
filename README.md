@@ -10,19 +10,18 @@ Main aim - build MineSweeper game with simple GUI
 - [x] choose GUI library
 - [x] prepare images for GUI
 - [x] implement GUI
-- [ ] implement flags
-- [ ] tests
-- [ ] play & fun
+- [x] implement flags feature
+- [ ] start panel, different levels
+- [ ] log info about winning/losing game
+- [ ] tests, playing and having fun
+- [ ] (performance)
 
 ---
+### Requirements
+- Scala (> 2.12.4)
+- Java 9 (no, not 8)
+- and a lot of patience
 
-### HOW TO
-- compile
-```
-?
-```
-
-- play game
-```
-?
-```
+### How to play
+- import project into IDE
+- build, compile, play by typing `sbt run` (in terminal)

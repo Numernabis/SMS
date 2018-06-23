@@ -1,6 +1,6 @@
 package logic
 
-abstract class Cell(opened: Boolean)
-case class Blank(opened: Boolean) extends Cell(opened)
-case class Bomb(opened: Boolean) extends Cell(opened)
-case class Hint(opened: Boolean, val num: Int) extends Cell(opened)
+abstract class Cell(state: Int)
+case class Blank(state: Int) extends Cell(state)
+case class Bomb(state: Int) extends Cell(state)
+case class Hint(state: Int, val num: Int) extends Cell(state)

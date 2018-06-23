@@ -19,10 +19,11 @@ class Hints(row: Int, col: Int) {
         for (i <- adj; j <- adj) {
             adjacentCells = getCell(board, x + i, y + j) ++ adjacentCells
         }
-        val num = (adjacentCells.map(countBombs)).foldLeft(0)(_ + _)
+        //val num = adjacentCells.map(countBombs).foldLeft(0)(_ + _)
+        val num = adjacentCells.map(countBombs).sum
         num match {
-            case 0 => Blank(false)
-            case _ => Hint(false, num)
+            case 0 => Blank(0)
+            case _ => Hint(0, num)
         }
     }
 

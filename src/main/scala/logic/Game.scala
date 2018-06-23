@@ -7,9 +7,22 @@ class Game(row: Int, col: Int, quantity: Int, var board: List[List[Cell]] = Nil)
     board = if (board != Nil) board else initializeBoard()
 
     def initializeBoard(): List[List[Cell]] = {
-        val board1 = List.tabulate(row)(_ => List.tabulate(col)(_ => new Blank(false)))
+        val board1 = List.tabulate(row)(_ => List.tabulate(col)(_ => new Blank(0)))
         val board2 = bombs.initializeBombs(board1, quantity)
         hints.initializeHints(board2, row, col)
+    }
+
+    def putFlag(tuple: (Int, Int)): Game = {
+        val x = tuple._1
+        val y = tuple._2
+        val cell = board(x)(y)
+        var newboard = board
+        cell match {
+            case Blank(0)     => newboard = board.updated(x, board(x).updated(y, Blank(2)))
+            case Bomb(0)      => newboard = board.updated(x, board(x).updated(y, Bomb(2)))
+            case Hint(0, num) => newboard = board.updated(x, board(x).updated(y, Hint(2, num)))
+        }
+        new Game(row, col, quantity, newboard)
     }
 
     def openCell(tuple: (Int, Int)): Game = {
@@ -17,13 +30,15 @@ class Game(row: Int, col: Int, quantity: Int, var board: List[List[Cell]] = Nil)
         val y = tuple._2
         val cell = board(x)(y)
         cell match {
-            case Blank(false) => openAdjacentCells(x, y)
-            case Bomb(false) => {
-                val newboard = board.updated(x, board(x).updated(y, Bomb(true)))
+            case Blank(2) | Bomb(2) | Hint(2, _) => //there is a flag
+
+            case Blank(0) => openAdjacentCells(x, y)
+            case Bomb(0) => {
+                val newboard = board.updated(x, board(x).updated(y, Bomb(1)))
                 new Game(row, col, quantity, newboard)
             }
-            case Hint(false, num) => {
-                val newboard = board.updated(x, board(x).updated(y, Hint(true, num)))
+            case Hint(0, num) => {
+                val newboard = board.updated(x, board(x).updated(y, Hint(1, num)))
                 new Game(row, col, quantity, newboard)
             }
             case _ => new Game(row, col, quantity, board)
@@ -31,7 +46,7 @@ class Game(row: Int, col: Int, quantity: Int, var board: List[List[Cell]] = Nil)
     }
 
     def openAdjacentCells(x: Int, y: Int): Game = {
-        val newboard = board.updated(x, board(x).updated(y, Blank(true)))
+        val newboard = board.updated(x, board(x).updated(y, Blank(1)))
         val newGame = new Game(row, col, quantity, newboard)
         var adjacentCells: List[(Int, Int)] = Nil
         val adj = List(-1, 0, 1)
@@ -52,24 +67,22 @@ class Game(row: Int, col: Int, quantity: Int, var board: List[List[Cell]] = Nil)
 
     def hasOnlyBombs(): Boolean = {
         !board.flatten.exists(cell => cell match {
-            case Blank(false) => true
-            case Hint(false, _) => true
+            case Blank(0) => true
+            case Hint(0, _) => true
             case _ => false
         })
     }
 
     def hasActiveBomb(): Boolean = {
         board.flatten.exists(cell => cell match {
-            case Bomb(true) => true
+            case Bomb(1) => true
             case _ => false
         })
     }
 
-  def getCell(x: Int, y: Int) ={
-    if (contains(x, y)) board(x)(y)
-    else Nil
-  }
-
-
+    def getCell(x: Int, y: Int) = {
+        if (contains(x, y)) board(x)(y)
+        else Nil
+    }
 }
 

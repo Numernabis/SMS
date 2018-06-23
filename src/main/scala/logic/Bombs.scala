@@ -14,7 +14,7 @@ class Bombs(row: Int, col: Int) {
         val cell = board(x)(y)
         cell match {
             case Bomb(_) => placeBomb(board)
-            case _ => board.updated(x, board(x).updated(y, Bomb(false)))
+            case _ => board.updated(x, board(x).updated(y, Bomb(0)))
         }
     }
 }

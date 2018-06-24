@@ -659,92 +659,46 @@
 [debug] == resolving dependencies default#sms$sources;8.0.144-R12->org.scala-lang#scala-reflect;2.12.6 [scala-tool->master]
 [debug] 	resolved ivy file produced in cache
 [debug] :: downloading artifacts ::
-[debug] 	[NOT REQUIRED] jline#jline;2.14.6!jline.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.6!scala-xml_2.12.jar(src)
-[debug] 	[NOT REQUIRED] org.scala-lang#scala-reflect;2.12.6!scala-reflect.jar(src)
-[debug] 	[NOT REQUIRED] org.scala-lang#scala-compiler;2.12.6!scala-compiler.jar(src)
 [debug] 	[NOT REQUIRED] org.scalafx#scalafx_2.12;8.0.144-R12!scalafx_2.12.jar(src)
-[debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.12.6!scala-library.jar(src)
-[debug] no default ivy user dir defined: set to C:\Users\Wojtek\.ivy2
-[debug] no default ivy user dir defined: set to C:\Users\Wojtek\.ivy2
-[debug] no default ivy user dir defined: set to C:\Users\Wojtek\.ivy2
-[debug] no default ivy user dir defined: set to C:\Users\Wojtek\.ivy2
-[debug] no default ivy user dir defined: set to C:\Users\Wojtek\.ivy2
-[debug] no default ivy user dir defined: set to C:\Users\Wojtek\.ivy2
-[debug] including url: jar:file:/C:/Users/Wojtek/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/C:/Users/Wojtek/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/C:/Users/Wojtek/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/C:/Users/Wojtek/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/C:/Users/Wojtek/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/C:/Users/Wojtek/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] no default cache defined: set to C:\Users\Wojtek\.ivy2\cache
-[debug] no default cache defined: set to C:\Users\Wojtek\.ivy2\cache
-[debug] no default cache defined: set to C:\Users\Wojtek\.ivy2\cache
-[debug] no default cache defined: set to C:\Users\Wojtek\.ivy2\cache
-[debug] no default cache defined: set to C:\Users\Wojtek\.ivy2\cache
-[debug] including url: jar:file:/C:/Users/Wojtek/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/C:/Users/Wojtek/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/C:/Users/Wojtek/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/C:/Users/Wojtek/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] no default cache defined: set to C:\Users\Wojtek\.ivy2\cache
-[debug] including url: jar:file:/C:/Users/Wojtek/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/C:/Users/Wojtek/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/C:/Users/Wojtek/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/C:/Users/Wojtek/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/C:/Users/Wojtek/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/C:/Users/Wojtek/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/C:/Users/Wojtek/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/C:/Users/Wojtek/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/C:/Users/Wojtek/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/C:/Users/Wojtek/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/C:/Users/Wojtek/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/C:/Users/Wojtek/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/C:/Users/Wojtek/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/C:/Users/Wojtek/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/C:/Users/Wojtek/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/C:/Users/Wojtek/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/C:/Users/Wojtek/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/C:/Users/Wojtek/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/C:/Users/Wojtek/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/C:/Users/Wojtek/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] settings loaded (64ms)
-[debug] 	default cache: C:\Users\Wojtek\.ivy2\cache
+[debug] 		tried C:\Users\Ludwik Ciechański\.ivy2\local\org.scala-lang\scala-compiler\\2.12.6\srcs\scala-compiler-sources.jar
+[debug] 		tried C:\Users\Ludwik Ciechański\.ivy2\local\org.scala-lang\scala-library\\2.12.6\srcs\scala-library-sources.jar
+[debug] no default ivy user dir defined: set to C:\Users\Ludwik Ciechański\.ivy2
+[debug] no default ivy user dir defined: set to C:\Users\Ludwik Ciechański\.ivy2
+[debug] no default ivy user dir defined: set to C:\Users\Ludwik Ciechański\.ivy2
+[debug] including url: jar:file:/C:/Users/Ludwik%20Ciechański/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
+[debug] including url: jar:file:/C:/Users/Ludwik%20Ciechański/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
+[debug] including url: jar:file:/C:/Users/Ludwik%20Ciechański/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
+[debug] no default ivy user dir defined: set to C:\Users\Ludwik Ciechański\.ivy2
+[debug] no default cache defined: set to C:\Users\Ludwik Ciechański\.ivy2\cache
+[debug] including url: jar:file:/C:/Users/Ludwik%20Ciechański/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
+[debug] including url: jar:file:/C:/Users/Ludwik%20Ciechański/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
+[debug] including url: jar:file:/C:/Users/Ludwik%20Ciechański/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
+[debug] no default cache defined: set to C:\Users\Ludwik Ciechański\.ivy2\cache
+[debug] including url: jar:file:/C:/Users/Ludwik%20Ciechański/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
+[debug] including url: jar:file:/C:/Users/Ludwik%20Ciechański/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
+[debug] including url: jar:file:/C:/Users/Ludwik%20Ciechański/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
+[debug] including url: jar:file:/C:/Users/Ludwik%20Ciechański/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
+[debug] no default cache defined: set to C:\Users\Ludwik Ciechański\.ivy2\cache
+[debug] including url: jar:file:/C:/Users/Ludwik%20Ciechański/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
+[debug] including url: jar:file:/C:/Users/Ludwik%20Ciechański/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
+[debug] including url: jar:file:/C:/Users/Ludwik%20Ciechański/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
+[debug] settings loaded (50ms)
+[debug] 	default cache: C:\Users\Ludwik Ciechański\.ivy2\cache
 [debug] 	default resolver: default
 [debug] 	-- 5 resolvers:
-[debug] settings loaded (64ms)
-[debug] settings loaded (64ms)
 [debug] 	shared [file]
-[debug] settings loaded (64ms)
-[debug] 	default cache: C:\Users\Wojtek\.ivy2\cache
-[debug] 	default cache: C:\Users\Wojtek\.ivy2\cache
-[debug] 	default cache: C:\Users\Wojtek\.ivy2\cache
-[debug] 	default resolver: default
-[debug] 	default resolver: default
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	default [chain] [local, main]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] 	local [file]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
+[debug] no default cache defined: set to C:\Users\Ludwik Ciechański\.ivy2\cache
+[debug] including url: jar:file:/C:/Users/Ludwik%20Ciechański/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
 [debug] 	default [chain] [local, main]
 [debug] 	public [ibiblio]
 [debug] 	main [chain] [shared, public]
 [debug] 	local [file]
-[debug] settings loaded (64ms)
-[debug] 	default cache: C:\Users\Wojtek\.ivy2\cache
+[debug] including url: jar:file:/C:/Users/Ludwik%20Ciechański/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
+[debug] 		tried C:\Users\Ludwik Ciechański\.ivy2\local\jline\jline\\2.14.6\srcs\jline-sources.jar
+[debug] 		tried https://repo1.maven.org/maven2/jline/jline/2.14.6/jline-2.14.6-sources.jar
+[debug] settings loaded (85ms)
+[debug] 	default cache: C:\Users\Ludwik Ciechański\.ivy2\cache
 [debug] 	default resolver: default
 [debug] 	-- 5 resolvers:
 [debug] 	shared [file]
@@ -752,8 +706,13 @@
 [debug] 	public [ibiblio]
 [debug] 	main [chain] [shared, public]
 [debug] 	local [file]
-[debug] settings loaded (70ms)
-[debug] 	default cache: C:\Users\Wojtek\.ivy2\cache
+[debug] including url: jar:file:/C:/Users/Ludwik%20Ciechański/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
+[debug] 		tried https://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.12.6/scala-compiler-2.12.6-sources.jar
+[debug] including url: jar:file:/C:/Users/Ludwik%20Ciechański/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
+[debug] including url: jar:file:/C:/Users/Ludwik%20Ciechański/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
+[debug] including url: jar:file:/C:/Users/Ludwik%20Ciechański/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
+[debug] settings loaded (117ms)
+[debug] 	default cache: C:\Users\Ludwik Ciechański\.ivy2\cache
 [debug] 	default resolver: default
 [debug] 	-- 5 resolvers:
 [debug] 	shared [file]
@@ -761,16 +720,77 @@
 [debug] 	public [ibiblio]
 [debug] 	main [chain] [shared, public]
 [debug] 	local [file]
-[debug] :: resolution report :: resolve 378ms :: artifacts dl 151ms
-[debug] 	report for default#sms$sources;8.0.144-R12 compile produced in C:\Users\Wojtek\Documents\Studia\IV semestr\Scala\SMS\target\scala-2.12\resolution-cache\reports\default-sms$sources-compile.xml
-[debug] 	report for default#sms$sources;8.0.144-R12 runtime produced in C:\Users\Wojtek\Documents\Studia\IV semestr\Scala\SMS\target\scala-2.12\resolution-cache\reports\default-sms$sources-runtime.xml
-[debug] 	report for default#sms$sources;8.0.144-R12 test produced in C:\Users\Wojtek\Documents\Studia\IV semestr\Scala\SMS\target\scala-2.12\resolution-cache\reports\default-sms$sources-test.xml
-[debug] 	report for default#sms$sources;8.0.144-R12 provided produced in C:\Users\Wojtek\Documents\Studia\IV semestr\Scala\SMS\target\scala-2.12\resolution-cache\reports\default-sms$sources-provided.xml
-[debug] 	report for default#sms$sources;8.0.144-R12 optional produced in C:\Users\Wojtek\Documents\Studia\IV semestr\Scala\SMS\target\scala-2.12\resolution-cache\reports\default-sms$sources-optional.xml
-[debug] 	report for default#sms$sources;8.0.144-R12 compile-internal produced in C:\Users\Wojtek\Documents\Studia\IV semestr\Scala\SMS\target\scala-2.12\resolution-cache\reports\default-sms$sources-compile-internal.xml
-[debug] 	report for default#sms$sources;8.0.144-R12 runtime-internal produced in C:\Users\Wojtek\Documents\Studia\IV semestr\Scala\SMS\target\scala-2.12\resolution-cache\reports\default-sms$sources-runtime-internal.xml
-[debug] 	report for default#sms$sources;8.0.144-R12 test-internal produced in C:\Users\Wojtek\Documents\Studia\IV semestr\Scala\SMS\target\scala-2.12\resolution-cache\reports\default-sms$sources-test-internal.xml
-[debug] 	report for default#sms$sources;8.0.144-R12 plugin produced in C:\Users\Wojtek\Documents\Studia\IV semestr\Scala\SMS\target\scala-2.12\resolution-cache\reports\default-sms$sources-plugin.xml
-[debug] 	report for default#sms$sources;8.0.144-R12 pom produced in C:\Users\Wojtek\Documents\Studia\IV semestr\Scala\SMS\target\scala-2.12\resolution-cache\reports\default-sms$sources-pom.xml
-[debug] 	report for default#sms$sources;8.0.144-R12 scala-tool produced in C:\Users\Wojtek\Documents\Studia\IV semestr\Scala\SMS\target\scala-2.12\resolution-cache\reports\default-sms$sources-scala-tool.xml
-[debug] 	resolve done (378ms resolve - 151ms download)
+[debug] 		tried C:\Users\Ludwik Ciechański\.ivy2\local\org.scala-lang\scala-reflect\\2.12.6\srcs\scala-reflect-sources.jar
+[debug] 		tried https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.12.6/scala-reflect-2.12.6-sources.jar
+[debug] including url: jar:file:/C:/Users/Ludwik%20Ciechański/.sbt/boot/scala-2.12.3/org.scala-sbt/sbt/1.0.2/ivy-2.3.0-sbt-a3314352b638afbf0dca19f127e8263ed6f898bd.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
+[debug] settings loaded (120ms)
+[debug] 	default cache: C:\Users\Ludwik Ciechański\.ivy2\cache
+[debug] 	default resolver: default
+[debug] 	-- 5 resolvers:
+[debug] 	shared [file]
+[debug] 	default [chain] [local, main]
+[debug] 	public [ibiblio]
+[debug] 	main [chain] [shared, public]
+[debug] 	local [file]
+[debug] 		tried https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.6/scala-library-2.12.6-sources.jar
+[warn] 	[FAILED     ] jline#jline;2.14.6!jline.jar(src): public: unable to get resource for jline#jline;2.14.6: res=https://repo1.maven.org/maven2/jline/jline/2.14.6/jline-2.14.6-sources.jar: javax.net.ssl.SSLException: java.lang.RuntimeException: Unexpected error: java.security.InvalidAlgorithmParameterException: the trustAnchors parameter must be non-empty (644ms)
+[warn] 	[FAILED     ] org.scala-lang#scala-compiler;2.12.6!scala-compiler.jar(src): public: unable to get resource for org/scala-lang#scala-compiler;2.12.6: res=https://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.12.6/scala-compiler-2.12.6-sources.jar: javax.net.ssl.SSLException: java.lang.RuntimeException: Unexpected error: java.security.InvalidAlgorithmParameterException: the trustAnchors parameter must be non-empty (644ms)
+[warn] 	[FAILED     ] org.scala-lang#scala-reflect;2.12.6!scala-reflect.jar(src): public: unable to get resource for org/scala-lang#scala-reflect;2.12.6: res=https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.12.6/scala-reflect-2.12.6-sources.jar: javax.net.ssl.SSLException: java.lang.RuntimeException: Unexpected error: java.security.InvalidAlgorithmParameterException: the trustAnchors parameter must be non-empty (613ms)
+[warn] 	[FAILED     ] org.scala-lang#scala-library;2.12.6!scala-library.jar(src): public: unable to get resource for org/scala-lang#scala-library;2.12.6: res=https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.6/scala-library-2.12.6-sources.jar: javax.net.ssl.SSLException: java.lang.RuntimeException: Unexpected error: java.security.InvalidAlgorithmParameterException: the trustAnchors parameter must be non-empty (597ms)
+[debug] 		tried C:\Users\Ludwik Ciechański\.sbt\preloaded\org.scala-lang\scala-compiler\2.12.6\srcs\scala-compiler-sources.jar
+[debug] 		tried C:\Users\Ludwik Ciechański\.sbt\preloaded\org.scala-lang\scala-reflect\2.12.6\srcs\scala-reflect-sources.jar
+[debug] 		tried C:\Users\Ludwik Ciechański\.sbt\preloaded\org.scala-lang\scala-library\2.12.6\srcs\scala-library-sources.jar
+[debug] 		tried C:\Users\Ludwik Ciechański\.sbt\preloaded\jline\jline\2.14.6\srcs\jline-sources.jar
+[debug] 		tried file:/C:/Users/Ludwik Ciechański/.sbt/preloaded/jline/jline/2.14.6/jline-2.14.6-sources.jar
+[warn] 	Detected merged artifact: [FAILED     ] jline#jline;2.14.6!jline.jar(src):  (0ms).
+[warn] ==== local: tried
+[warn] ==== public: tried
+[warn] ==== local-preloaded-ivy: tried
+[warn]   C:\Users\Ludwik Ciechański\.sbt\preloaded\jline\jline\2.14.6\srcs\jline-sources.jar
+[warn] ==== local-preloaded: tried
+[debug] 		tried file:/C:/Users/Ludwik Ciechański/.sbt/preloaded/org/scala-lang/scala-library/2.12.6/scala-library-2.12.6-sources.jar
+[debug] 		tried file:/C:/Users/Ludwik Ciechański/.sbt/preloaded/org/scala-lang/scala-compiler/2.12.6/scala-compiler-2.12.6-sources.jar
+[debug] 		tried file:/C:/Users/Ludwik Ciechański/.sbt/preloaded/org/scala-lang/scala-reflect/2.12.6/scala-reflect-2.12.6-sources.jar
+[warn] 	Detected merged artifact: [FAILED     ] org.scala-lang#scala-library;2.12.6!scala-library.jar(src):  (0ms).
+[warn] ==== local: tried
+[warn] ==== public: tried
+[warn]   https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.6/scala-library-2.12.6-sources.jar
+[warn] ==== local-preloaded-ivy: tried
+[warn]   C:\Users\Ludwik Ciechański\.sbt\preloaded\org.scala-lang\scala-library\2.12.6\srcs\scala-library-sources.jar
+[warn] ==== local-preloaded: tried
+[warn] 	Detected merged artifact: [FAILED     ] org.scala-lang#scala-compiler;2.12.6!scala-compiler.jar(src):  (0ms).
+[warn] 	Detected merged artifact: [FAILED     ] org.scala-lang#scala-reflect;2.12.6!scala-reflect.jar(src):  (0ms).
+[warn] ==== local: tried
+[warn] ==== local: tried
+[warn]   C:\Users\Ludwik Ciechański\.ivy2\local\org.scala-lang\scala-reflect\\2.12.6\srcs\scala-reflect-sources.jar
+[warn] ==== public: tried
+[warn] ==== public: tried
+[warn] ==== local-preloaded-ivy: tried
+[warn] ==== local-preloaded-ivy: tried
+[warn] ==== local-preloaded: tried
+[warn]   C:\Users\Ludwik Ciechański\.sbt\preloaded\org.scala-lang\scala-reflect\2.12.6\srcs\scala-reflect-sources.jar
+[warn]   file:/C:/Users/Ludwik Ciechański/.sbt/preloaded/org/scala-lang/scala-compiler/2.12.6/scala-compiler-2.12.6-sources.jar
+[warn] ==== local-preloaded: tried
+[warn]   file:/C:/Users/Ludwik Ciechański/.sbt/preloaded/org/scala-lang/scala-reflect/2.12.6/scala-reflect-2.12.6-sources.jar
+[debug] :: resolution report :: resolve 830ms :: artifacts dl 846ms
+[warn] 	::::::::::::::::::::::::::::::::::::::::::::::
+[warn] 	::              FAILED DOWNLOADS            ::
+[warn] 	:: ^ see resolution messages for details  ^ ::
+[warn] 	::::::::::::::::::::::::::::::::::::::::::::::
+[warn] 	:: org.scala-lang#scala-library;2.12.6!scala-library.jar(src)
+[warn] 	:: org.scala-lang#scala-reflect;2.12.6!scala-reflect.jar(src)
+[warn] 	:: org.scala-lang#scala-compiler;2.12.6!scala-compiler.jar(src)
+[warn] 	:: jline#jline;2.14.6!jline.jar(src)
+[warn] 	::::::::::::::::::::::::::::::::::::::::::::::
+[debug] 	report for default#sms$sources;8.0.144-R12 compile produced in C:\Users\Ludwik Ciechański\Desktop\SMS\target\scala-2.12\resolution-cache\reports\default-sms$sources-compile.xml
+[debug] 	report for default#sms$sources;8.0.144-R12 runtime produced in C:\Users\Ludwik Ciechański\Desktop\SMS\target\scala-2.12\resolution-cache\reports\default-sms$sources-runtime.xml
+[debug] 	report for default#sms$sources;8.0.144-R12 test produced in C:\Users\Ludwik Ciechański\Desktop\SMS\target\scala-2.12\resolution-cache\reports\default-sms$sources-test.xml
+[debug] 	report for default#sms$sources;8.0.144-R12 provided produced in C:\Users\Ludwik Ciechański\Desktop\SMS\target\scala-2.12\resolution-cache\reports\default-sms$sources-provided.xml
+[debug] 	report for default#sms$sources;8.0.144-R12 optional produced in C:\Users\Ludwik Ciechański\Desktop\SMS\target\scala-2.12\resolution-cache\reports\default-sms$sources-optional.xml
+[debug] 	report for default#sms$sources;8.0.144-R12 compile-internal produced in C:\Users\Ludwik Ciechański\Desktop\SMS\target\scala-2.12\resolution-cache\reports\default-sms$sources-compile-internal.xml
+[debug] 	report for default#sms$sources;8.0.144-R12 runtime-internal produced in C:\Users\Ludwik Ciechański\Desktop\SMS\target\scala-2.12\resolution-cache\reports\default-sms$sources-runtime-internal.xml
+[debug] 	report for default#sms$sources;8.0.144-R12 test-internal produced in C:\Users\Ludwik Ciechański\Desktop\SMS\target\scala-2.12\resolution-cache\reports\default-sms$sources-test-internal.xml
+[debug] 	report for default#sms$sources;8.0.144-R12 plugin produced in C:\Users\Ludwik Ciechański\Desktop\SMS\target\scala-2.12\resolution-cache\reports\default-sms$sources-plugin.xml
+[debug] 	report for default#sms$sources;8.0.144-R12 pom produced in C:\Users\Ludwik Ciechański\Desktop\SMS\target\scala-2.12\resolution-cache\reports\default-sms$sources-pom.xml
+[debug] 	report for default#sms$sources;8.0.144-R12 scala-tool produced in C:\Users\Ludwik Ciechański\Desktop\SMS\target\scala-2.12\resolution-cache\reports\default-sms$sources-scala-tool.xml
+[debug] 	resolve done (830ms resolve - 846ms download)

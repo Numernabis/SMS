@@ -119,17 +119,17 @@ object BoardGUI extends JFXApp {
     layoutY = 300
 
     onMouseClicked = (m: MouseEvent) => {
-      if(!(toggle.getSelectedToggle == null)){
+      if (!(toggle.getSelectedToggle == null)) {
 
-        if(level1.selected()){
+        if (level1.selected()) {
           tilesX = 10
           tilesY = 10
           bombNr = 5
-        } else if(level2.selected()){
+        } else if (level2.selected()) {
           tilesX = 15
           tilesY = 15
           bombNr = 15
-        } else if(level3.selected()){
+        } else if (level3.selected()) {
           tilesX = 20
           tilesY = 15
           bombNr = 40
@@ -153,7 +153,7 @@ object BoardGUI extends JFXApp {
   }
 
   // make scene prepared to game with defined size and mouse behaviour
-  def makeScene(x: Int, y: Int): Scene ={
+  def makeScene(x: Int, y: Int): Scene = {
     new Scene(x * tileWidth, y * tileHeight) {
       onMouseClicked = (m: MouseEvent) => {
 
@@ -197,7 +197,7 @@ object BoardGUI extends JFXApp {
     )
   }
 
-  def putGameOver(): Unit ={
+  def putGameOver(): Unit = {
     gameOver.layoutX = tilesX * tileWidth / 2 - 190
     gameOver.layoutY = tilesY * tileHeight / 2 - 80
     gameScene.content += gameOver
@@ -222,7 +222,7 @@ object BoardGUI extends JFXApp {
     )
   }
 
-  def putWinner(): Unit ={
+  def putWinner(): Unit = {
     winner.layoutX = tilesX * tileWidth / 2 - 130
     winner.layoutY = tilesY * tileHeight / 2 - 80
     gameScene.content += winner
@@ -265,7 +265,7 @@ object BoardGUI extends JFXApp {
 
     flattenAndReplace()
 
-    if (!gameRunning){
+    if (!gameRunning) {
       for (j <- 0 until tilesX; i <- 0 until tilesY) {
         logicBoard.getCell(j, i) match {
           case Bomb(_) => {
@@ -276,8 +276,7 @@ object BoardGUI extends JFXApp {
       }
       flattenAndReplace()
       putGameOver()
-    }
-    else if(logicBoard.hasOnlyBombs()){
+    } else if (logicBoard.hasOnlyBombs()) {
       putWinner()
       gameRunning = false
     }

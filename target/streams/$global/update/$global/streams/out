@@ -647,13 +647,13 @@
 [0m[[0m[0mdebug[0m] [0m[0mignoring unhandled DependencyDescriptorMediator: class sbt.internal.librarymanagement.IvyScalaUtil$OverrideScalaMediator[0m
 [0m[[0m[0mdebug[0m] [0m[0m	resolved ivy file produced in cache[0m
 [0m[[0m[0mdebug[0m] [0m[0m:: downloading artifacts ::[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang#scala-library;2.12.6!scala-library.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scalafx#scalafx_2.12;8.0.144-R12!scalafx_2.12.jar[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.12.6!scala-compiler.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.6!scala-xml_2.12.jar(bundle)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang#scala-library;2.12.6!scala-library.jar[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] jline#jline;2.14.6!jline.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.6!scala-xml_2.12.jar(bundle)[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang#scala-reflect;2.12.6!scala-reflect.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m:: resolution report :: resolve 450ms :: artifacts dl 13ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scalafx#scalafx_2.12;8.0.144-R12!scalafx_2.12.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m:: resolution report :: resolve 502ms :: artifacts dl 9ms[0m
 [0m[[0m[0mdebug[0m] [0m[0m	report for default#sms_2.12;8.0.144-R12 compile produced in C:\Users\Ludwik Ciechański\Desktop\SMS\target\scala-2.12\resolution-cache\reports\default-sms_2.12-compile.xml[0m
 [0m[[0m[0mdebug[0m] [0m[0m	report for default#sms_2.12;8.0.144-R12 runtime produced in C:\Users\Ludwik Ciechański\Desktop\SMS\target\scala-2.12\resolution-cache\reports\default-sms_2.12-runtime.xml[0m
 [0m[[0m[0mdebug[0m] [0m[0m	report for default#sms_2.12;8.0.144-R12 test produced in C:\Users\Ludwik Ciechański\Desktop\SMS\target\scala-2.12\resolution-cache\reports\default-sms_2.12-test.xml[0m
@@ -665,5 +665,5 @@
 [0m[[0m[0mdebug[0m] [0m[0m	report for default#sms_2.12;8.0.144-R12 plugin produced in C:\Users\Ludwik Ciechański\Desktop\SMS\target\scala-2.12\resolution-cache\reports\default-sms_2.12-plugin.xml[0m
 [0m[[0m[0mdebug[0m] [0m[0m	report for default#sms_2.12;8.0.144-R12 pom produced in C:\Users\Ludwik Ciechański\Desktop\SMS\target\scala-2.12\resolution-cache\reports\default-sms_2.12-pom.xml[0m
 [0m[[0m[0mdebug[0m] [0m[0m	report for default#sms_2.12;8.0.144-R12 scala-tool produced in C:\Users\Ludwik Ciechański\Desktop\SMS\target\scala-2.12\resolution-cache\reports\default-sms_2.12-scala-tool.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	resolve done (450ms resolve - 13ms download)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	resolve done (502ms resolve - 9ms download)[0m
 [0m[[0m[0minfo[0m] [0m[0mDone updating.[0m

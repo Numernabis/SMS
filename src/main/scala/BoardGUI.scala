@@ -114,7 +114,7 @@ object BoardGUI extends JFXApp {
   toggle.toggles = List(level1, level2, level3)
 
 
-  val startButton: Button = new Button("Start!") {
+  val startButton: Button = new Button("    Start!    ") {
     layoutX = 250
     layoutY = 300
 
@@ -146,7 +146,24 @@ object BoardGUI extends JFXApp {
   }
 
 
-  val welcomeScreen = List(startButton, level1, level2, level3, startText, authors, levelText)
+  val imgStart1: ImageView = new ImageView(new Image("images/flag_white.png")){
+    x = 20
+    y = 170
+    fitHeight = 200
+    fitWidth = 150
+  }
+
+  val imgStart2: ImageView = new ImageView(new Image("images/bomb_white.png")){
+    x = 390
+    y = 130
+    fitHeight = 150
+    fitWidth = 180
+    rotate = 15
+  }
+
+
+  val welcomeScreen = List(startButton, level1, level2, level3, startText, authors,
+    levelText, imgStart1, imgStart2)
 
   val welcomeScene: Scene = new Scene(600, 400) {
     content = welcomeScreen

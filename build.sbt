@@ -5,7 +5,9 @@ name := "SMS"
 version := "8.0.144-R12"
 
 // Version of Scala used by the project
-scalaVersion := "2.12.4"
+scalaVersion := "2.12.6"
+
+// IMPORTANT - check your scala version *.6 or  *.4
 
 // Add dependency on ScalaFX library
 libraryDependencies += "org.scalafx" %% "scalafx" % "8.0.144-R12"

@@ -3,8 +3,15 @@ import javafx.scene.input.MouseButton
 import scalafx.Includes._
 import scalafx.scene.input.MouseEvent
 import scalafx.application.JFXApp
+import scalafx.geometry.Insets
 import scalafx.scene.Scene
+import scalafx.scene.paint.Color._
+import scalafx.scene.control.{Button, TextField}
+import scalafx.scene.effect.DropShadow
 import scalafx.scene.image.{Image, ImageView}
+import scalafx.scene.layout.HBox
+import scalafx.scene.paint.{LinearGradient, Stops}
+import scalafx.scene.text.Text
 
 object BoardGUI extends JFXApp {
 
@@ -16,6 +23,9 @@ object BoardGUI extends JFXApp {
     for (i <- 1 until 9) {
         imgHint(i) = s"images/$i.png"
     }
+  var gameRunning = true
+
+
 
     val tileWidth = 40
     val tileHeight = 40
@@ -23,6 +33,10 @@ object BoardGUI extends JFXApp {
     val tilesX = 15 //TODO: jako zmienne, w zależności od poziomu
     val tilesY = 10 //TODO: jw.
     val bombNr = 9  //TODO: jw.
+
+
+
+
 
     var logicBoard = new Game(tilesX, tilesY, bombNr)
 
@@ -39,27 +53,65 @@ object BoardGUI extends JFXApp {
 
     val myScene: Scene = new Scene(tileWidth * tilesX, tileHeight * tilesY) {
 
-        content = boardFlat
+      val gameOver = new HBox {
+        autosize()
+        layoutX = tilesX * tileWidth / 2 - 190
+        layoutY = tilesY * tileHeight / 2 - 80
+
+        padding = Insets(20)
+        children = Seq(
+          new Text {
+            text = "Game Over!"
+            style = "-fx-font-size: 48pt"
+            fill = new LinearGradient(
+              endX = 0,
+              stops = Stops(Red, DarkRed))
+          }
+        )
+      }
+
+        val startButton = new Button("Start!"){
+          layoutX = tilesX * tileWidth / 2 - 30
+          layoutY = tilesY * tileHeight / 2 - 15
+          onMouseClicked = (m: MouseEvent) =>{
+            content = boardFlat
+          }
+        }
+
+
+      val welcomeScreen = List(startButton)
+
+      content = welcomeScreen
+
 
         onMouseClicked = (m: MouseEvent) => {
+
+          if(gameRunning) {
             val nr_x = (m.getX / tileWidth).asInstanceOf[Int]
             val nr_y = (m.getY / tileHeight).asInstanceOf[Int]
             //println(nr_x, nr_y)
 
             m.getButton match {
-                case MouseButton.PRIMARY =>
-                    logicBoard = logicBoard.openCell(nr_x, nr_y)
-                    refresh()
-                case MouseButton.SECONDARY =>
-                    logicBoard = logicBoard.putFlag(nr_x, nr_y)
-                    refresh()
-                case MouseButton.MIDDLE =>
-                    //czy potrzebujemy środkowego przycisku mychy?
-                    //putImg(nr_x, nr_y, imgBomb)
-                    //flattenAndReplace()
-                case _ =>
-                    println("Unknown pattern with Mouse Button")
+              case MouseButton.PRIMARY =>
+                logicBoard = logicBoard.openCell(nr_x, nr_y)
+                refresh()
+              case MouseButton.SECONDARY =>
+                logicBoard = logicBoard.putFlag(nr_x, nr_y)
+                refresh()
+              case MouseButton.MIDDLE =>
+              //czy potrzebujemy środkowego przycisku mychy?
+              //putImg(nr_x, nr_y, imgBomb)
+              //flattenAndReplace()
+              case _ =>
+                println("Unknown pattern with Mouse Button")
             }
+          } else {
+            logicBoard = new Game(tilesX, tilesY, bombNr)
+            gameRunning = true
+            refresh()
+          }
+
+
 
         }
 
@@ -83,7 +135,7 @@ object BoardGUI extends JFXApp {
                 logicBoard.getCell(j, i) match {
                     case Bomb(1)    => {
                         putImg(j, i, imgBomb)
-                        //TODO: koniec gry
+                        gameRunning = false
                     }
                     case Blank(1)   => putImg(j, i, imgPressed)
                     case Hint(1, x) => putImg(j, i, imgHint(x))
@@ -101,6 +153,9 @@ object BoardGUI extends JFXApp {
             //TODO: sprawdzenie czy wygrano
 
             flattenAndReplace()
+
+          if(!gameRunning)
+            content += gameOver
         }
     }
 

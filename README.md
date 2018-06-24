@@ -11,8 +11,8 @@ Main aim - build MineSweeper game with simple GUI
 - [x] prepare images for GUI
 - [x] implement GUI
 - [x] implement flags feature
-- [ ] start panel, different levels
-- [ ] log info about winning/losing game
+- [X] start panel, different levels
+- [X] log info about winning/losing game
 - [ ] tests, playing and having fun
 - [ ] (performance)
 

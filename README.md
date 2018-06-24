@@ -18,10 +18,13 @@ Main aim - build MineSweeper game with simple GUI
 
 ---
 ### Requirements
-- Scala (> 2.12.4)
+- Scala (min. 2.12.4, tested on 2.12.6)
 - Java 9 (no, not 8)
 - and a lot of patience
 
 ### How to play
-- import project into IDE
+- git clone or download
+- import project into your IDE (suggested IntelliJ)
+- import SBT project
 - build, compile, play by typing `sbt run` (in terminal)
+- have fun!

@@ -73,20 +73,15 @@ class Game(row: Int, col: Int, quantity: Int, var board: List[List[Cell]] = Nil)
         !board.flatten.exists(cell => cell match {
             case Blank(0) => true
             case Hint(0, _) => true
+            case Blank(2) => true
+            case Hint(2, _) => true
             case _ => false
         })
     }
 
-    def hasActiveBomb(): Boolean = {
-        board.flatten.exists(cell => cell match {
-            case Bomb(1) => true
-            case _ => false
-        })
-    }
-
-    def getCell(x: Int, y: Int) = {
+    def getCell(x: Int, y: Int): Cell = {
         if (contains(x, y)) board(x)(y)
-        else Nil
+        else null
     }
 }
 

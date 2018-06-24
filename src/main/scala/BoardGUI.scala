@@ -88,7 +88,7 @@ object BoardGUI extends JFXApp {
     padding = Insets(20)
     children = Seq(
       new Text {
-        text = "Made by: \nLudwik Ciechanski \nWojciech Wanczyk"
+        text = "Made by: \nLudwik Ciechański \nWojciech Wańczyk"
         style = "-fx-font-family:  Helvetica"
         fill = new LinearGradient(
           stops = Stops(Black, Black))
@@ -124,15 +124,15 @@ object BoardGUI extends JFXApp {
         if(level1.selected()){
           tilesX = 10
           tilesY = 10
-          bombNr = 1
+          bombNr = 5
         } else if(level2.selected()){
           tilesX = 15
-          tilesY = 10
-          bombNr = 30
-        } else if(level3.selected()){
-          tilesX = 15
           tilesY = 15
-          bombNr = 70
+          bombNr = 15
+        } else if(level3.selected()){
+          tilesX = 20
+          tilesY = 15
+          bombNr = 40
         }
 
         gameRunning = true
@@ -151,7 +151,6 @@ object BoardGUI extends JFXApp {
   val welcomeScene: Scene = new Scene(600, 400) {
     content = welcomeScreen
   }
-
 
   // make scene prepared to game with defined size and mouse behaviour
   def makeScene(x: Int, y: Int): Scene ={
@@ -230,8 +229,6 @@ object BoardGUI extends JFXApp {
   }
 
 
-
-
   def flattenAndReplace(): Unit = {
     boardFlat = imgBoard.flatten
     gameScene.content = boardFlat
@@ -248,14 +245,10 @@ object BoardGUI extends JFXApp {
 
   def refresh(): Unit = {
 
-    // to check if only bombs are uncovered - winning scenario
-    var coveredCells = 0
-
     for (j <- 0 until tilesX; i <- 0 until tilesY) {
       logicBoard.getCell(j, i) match {
         case Blank(0) | Bomb(0) | Hint(0, _) => {
           putImg(j, i, imgNormal)
-          coveredCells += 1
         }
         case Blank(1) => putImg(j, i, imgPressed)
         case Hint(1, x) => putImg(j, i, imgHint(x))
@@ -284,12 +277,11 @@ object BoardGUI extends JFXApp {
       flattenAndReplace()
       putGameOver()
     }
-    else if(coveredCells <= bombNr){
+    else if(logicBoard.hasOnlyBombs()){
       putWinner()
       gameRunning = false
     }
   }
-
 
   stage = new JFXApp.PrimaryStage {
     scene = welcomeScene

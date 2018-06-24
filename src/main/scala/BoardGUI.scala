@@ -8,7 +8,7 @@ import scalafx.scene.Scene
 import scalafx.scene.paint.Color._
 import scalafx.scene.control.{Button, RadioButton, ToggleGroup}
 import scalafx.scene.image.{Image, ImageView}
-import scalafx.scene.layout.HBox
+import scalafx.scene.layout.{Border, BorderStroke, HBox}
 import scalafx.scene.paint.{LinearGradient, Stops}
 import scalafx.scene.text.Text
 
@@ -27,12 +27,10 @@ object BoardGUI extends JFXApp {
   val tileWidth = 40
   val tileHeight = 40
 
-  var tilesX = 10 //TODO: jako zmienne, w zależności od poziomu
-  var tilesY = 10 //TODO: jw.
-  var bombNr = 9 //TODO: jw.
-
-
-  var logicBoard = new Game(tilesX, tilesY, bombNr)
+  var tilesX = 10
+  var tilesY = 10
+  var bombNr = 5
+  var logicBoard: Game = new Game(tilesX, tilesY, bombNr)
   var gameScene: Scene = makeScene(tilesX, tilesY)
 
   var imgBoard = Array.ofDim[ImageView](tilesY, tilesX)
@@ -114,17 +112,15 @@ object BoardGUI extends JFXApp {
           tilesY = 10
           bombNr = 10
         } else if(level2.selected()){
-          tilesX = 20
-          tilesY = 15
-          bombNr = 10
+          tilesX = 15
+          tilesY = 10
+          bombNr = 30
         } else if(level3.selected()){
-          tilesX = 25
+          tilesX = 15
           tilesY = 15
-          bombNr = 10
+          bombNr = 70
         }
 
-
-        println(toggle.getSelectedToggle)
         gameRunning = true
         gameScene = makeScene(tilesX, tilesY)
         logicBoard = new Game(tilesX, tilesY, bombNr)
@@ -137,8 +133,6 @@ object BoardGUI extends JFXApp {
 
 
   val welcomeScreen = List(startButton, level1, level2, level3, startText, levelText)
-
-
 
   val welcomeScene: Scene = new Scene(600, 400) {
     content = welcomeScreen
@@ -172,15 +166,7 @@ object BoardGUI extends JFXApp {
     }
   }
 
-
-
-
-
-  val gameOver = new HBox {
-    autosize()
-    layoutX = tilesX * tileWidth / 2 - 190
-    layoutY = tilesY * tileHeight / 2 - 80
-
+  val gameOver: HBox = new HBox {
     padding = Insets(20)
     children = Seq(
       new Text {
@@ -192,6 +178,34 @@ object BoardGUI extends JFXApp {
       }
     )
   }
+
+  def putGameOver(): Unit ={
+    gameOver.layoutX = tilesX * tileWidth / 2 - 190
+    gameOver.layoutY = tilesY * tileHeight / 2 - 80
+    gameScene.content += gameOver
+  }
+
+
+  val winner: HBox = new HBox {
+    padding = Insets(20)
+    children = Seq(
+      new Text {
+        text = "Winner!"
+        style = "-fx-font-size: 48pt"
+        fill = new LinearGradient(
+          endX = 0,
+          stops = Stops(Yellow, Red))
+      }
+    )
+  }
+
+  def putWinner(): Unit ={
+    winner.layoutX = tilesX * tileWidth / 2 - 130
+    winner.layoutY = tilesY * tileHeight / 2 - 80
+    gameScene.content += winner
+  }
+
+
 
 
   def flattenAndReplace(): Unit = {
@@ -210,31 +224,45 @@ object BoardGUI extends JFXApp {
 
   def refresh(): Unit = {
 
+    var coveredCells = 0
+
     for (j <- 0 until tilesX; i <- 0 until tilesY) {
       logicBoard.getCell(j, i) match {
+        case Blank(0) | Bomb(0) | Hint(0, _) => {
+          putImg(j, i, imgNormal)
+          coveredCells += 1
+        }
+        case Blank(1) => putImg(j, i, imgPressed)
+        case Hint(1, x) => putImg(j, i, imgHint(x))
         case Bomb(1) => {
           putImg(j, i, imgBomb)
           gameRunning = false
         }
-        case Blank(1) => putImg(j, i, imgPressed)
-        case Hint(1, x) => putImg(j, i, imgHint(x))
-
         case Blank(2) | Bomb(2) | Hint(2, _) => {
           putImg(j, i, imgFlag)
-        }
-        case Blank(0) | Bomb(0) | Hint(0, _) => {
-          putImg(j, i, imgNormal)
         }
         case _ =>
       }
     }
 
-    //TODO: sprawdzenie czy wygrano
-
     flattenAndReplace()
 
-    if (!gameRunning)
-      gameScene.content += gameOver
+    if (!gameRunning){
+      for (j <- 0 until tilesX; i <- 0 until tilesY) {
+        logicBoard.getCell(j, i) match {
+          case Bomb(_) => {
+            putImg(j, i, imgBomb)
+          }
+          case _ =>
+        }
+      }
+      flattenAndReplace()
+      putGameOver()
+    }
+    else if(coveredCells <= bombNr){
+      putWinner()
+      gameRunning = false
+    }
   }
 
 

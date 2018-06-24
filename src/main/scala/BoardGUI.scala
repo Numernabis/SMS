@@ -7,8 +7,9 @@ import scalafx.geometry.Insets
 import scalafx.scene.Scene
 import scalafx.scene.paint.Color._
 import scalafx.scene.control.{Button, RadioButton, ToggleGroup}
+import scalafx.scene.effect.DropShadow
 import scalafx.scene.image.{Image, ImageView}
-import scalafx.scene.layout.{Border, BorderStroke, HBox}
+import scalafx.scene.layout.HBox
 import scalafx.scene.paint.{LinearGradient, Stops}
 import scalafx.scene.text.Text
 
@@ -79,6 +80,21 @@ object BoardGUI extends JFXApp {
     )
   }
 
+  val authors = new HBox {
+    autosize()
+    layoutX = 450
+    layoutY = 310
+
+    padding = Insets(20)
+    children = Seq(
+      new Text {
+        text = "Made by: \nLudwik Ciechanski \nWojciech Wanczyk"
+        style = "-fx-font-family:  Helvetica"
+        fill = new LinearGradient(
+          stops = Stops(Black, Black))
+      }
+    )
+  }
 
 
   val level1: RadioButton = new RadioButton("Easy") {
@@ -98,8 +114,6 @@ object BoardGUI extends JFXApp {
   toggle.toggles = List(level1, level2, level3)
 
 
-
-
   val startButton: Button = new Button("Start!") {
     layoutX = 250
     layoutY = 300
@@ -110,7 +124,7 @@ object BoardGUI extends JFXApp {
         if(level1.selected()){
           tilesX = 10
           tilesY = 10
-          bombNr = 10
+          bombNr = 1
         } else if(level2.selected()){
           tilesX = 15
           tilesY = 10
@@ -132,13 +146,14 @@ object BoardGUI extends JFXApp {
   }
 
 
-  val welcomeScreen = List(startButton, level1, level2, level3, startText, levelText)
+  val welcomeScreen = List(startButton, level1, level2, level3, startText, authors, levelText)
 
   val welcomeScene: Scene = new Scene(600, 400) {
     content = welcomeScreen
   }
 
 
+  // make scene prepared to game with defined size and mouse behaviour
   def makeScene(x: Int, y: Int): Scene ={
     new Scene(x * tileWidth, y * tileHeight) {
       onMouseClicked = (m: MouseEvent) => {
@@ -151,13 +166,12 @@ object BoardGUI extends JFXApp {
           m.getButton match {
             case MouseButton.PRIMARY =>
               logicBoard = logicBoard.openCell(nr_x, nr_y)
-              refresh()
             case MouseButton.SECONDARY =>
               logicBoard = logicBoard.putFlag(nr_x, nr_y)
-              refresh()
             case _ =>
               println("Unknown pattern with Mouse Button")
           }
+          refresh()
         } else {
           logicBoard = new Game(tilesX, tilesY, bombNr)
           stage.scene = welcomeScene
@@ -175,6 +189,11 @@ object BoardGUI extends JFXApp {
         fill = new LinearGradient(
           endX = 0,
           stops = Stops(Red, DarkRed))
+        effect = new DropShadow {
+          color = Black
+          radius = 25
+          spread = 0.25
+        }
       }
     )
   }
@@ -195,6 +214,11 @@ object BoardGUI extends JFXApp {
         fill = new LinearGradient(
           endX = 0,
           stops = Stops(Yellow, Red))
+        effect = new DropShadow {
+          color = Black
+          radius = 25
+          spread = 0.25
+        }
       }
     )
   }
@@ -224,6 +248,7 @@ object BoardGUI extends JFXApp {
 
   def refresh(): Unit = {
 
+    // to check if only bombs are uncovered - winning scenario
     var coveredCells = 0
 
     for (j <- 0 until tilesX; i <- 0 until tilesY) {
